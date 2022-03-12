@@ -15,13 +15,10 @@ public class InscripcionEnLaPaginaConDatatable {
 	@When("^el diligencia todos los datos de la pagina para el registro$")
 	public void elDiligenciaTodosLosDatosDeLaPaginaParaElRegistro(List<InicioRegistro> conlosregistrosexitosos)  {
 		OnStage.theActorInTheSpotlight().attemptsTo((Performable) EjecucionInicioRegistro.conLosDatos2(conlosregistrosexitosos.get(0)));
-
 	}
-
 
 	@Then("^el puede ver su nombre en la pagina despues de diligenciar los datos$")
 	public void elPuedeVerSuNombreEnLaPaginaDespuesDeDiligenciarLosDatos()  {
 
 	}
-	
 }

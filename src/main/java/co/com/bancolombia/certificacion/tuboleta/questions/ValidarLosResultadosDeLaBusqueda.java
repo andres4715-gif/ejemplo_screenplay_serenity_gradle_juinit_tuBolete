@@ -16,7 +16,4 @@ public class ValidarLosResultadosDeLaBusqueda implements Question<String> {
 	public static ValidarLosResultadosDeLaBusqueda conElDato() {
 		return new ValidarLosResultadosDeLaBusqueda();
 	}
-
-
-
 }

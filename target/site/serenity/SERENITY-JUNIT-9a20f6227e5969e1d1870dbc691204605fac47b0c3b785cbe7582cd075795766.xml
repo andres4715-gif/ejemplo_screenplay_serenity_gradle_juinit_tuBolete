@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="hacer una inscripcion en la pagina tuboleta" skipped="0" tests="1" time="32.51" timestamp="2022-03-11 07:10:36"><testcase name="inscribir mis datos personales en la pagina"><failure message="The following error occurred: Expected enabled element was not enabled" type="net.thucydides.core.webdriver.exceptions.ElementShouldBeEnabledException">The following error occurred: Expected enabled element was not enabled</failure><system-err>The following error occurred: Expected enabled element was not enabled
+co.com.bancolombia.certificacion.tuboleta.tasks.EjecucionDetallesPersonales.performAs(EjecucionDetallesPersonales.java:18)
+co.com.bancolombia.certificacion.tuboleta.stepdefinitions.RegistrarUsuario.elDiligenciaTodosLosDatosDeLaPaginaParaFinalizarElRegistro(RegistrarUsuario.java:37)
+cucumber.runner.Runner.runPickle(Runner.java:80)
+</system-err></testcase></testsuite>

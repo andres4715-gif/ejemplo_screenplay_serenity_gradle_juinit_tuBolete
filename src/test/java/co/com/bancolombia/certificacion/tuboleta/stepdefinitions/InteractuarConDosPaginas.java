@@ -23,7 +23,6 @@ public class InteractuarConDosPaginas {
 	public void elSeleccionaIrseDeTourACartagena() {
 		theActorInTheSpotlight().attemptsTo(EjecucionModuloViajes.conElClick(),
 				EjecucionClickEnTours.conElClick(), EjecucionEscogerDestinoDelTour.conElClick());
-
 	}
 
 	@Then("^el ve los resultados para salir a los (.*)$")

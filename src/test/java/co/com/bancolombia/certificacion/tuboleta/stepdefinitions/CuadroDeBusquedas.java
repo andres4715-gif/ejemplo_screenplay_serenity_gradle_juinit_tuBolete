@@ -11,17 +11,14 @@ import net.serenitybdd.screenplay.actors.OnStage;
 
 public class CuadroDeBusquedas {
 
-	@When("^el diligencia el campo de busqueda con la palabra (.*)$")
-	public void elDiligenciaElCampoDeBusquedaConLaPalabra(String buscarPalabra) {
-		OnStage.theActorInTheSpotlight().attemptsTo(EjecucionCuadroDeBusquedas.conLaPalabra(buscarPalabra));
+    @When("^el diligencia el campo de busqueda con la palabra (.*)$")
+    public void elDiligenciaElCampoDeBusquedaConLaPalabra(String buscarPalabra) {
+        OnStage.theActorInTheSpotlight().attemptsTo(EjecucionCuadroDeBusquedas.conLaPalabra(buscarPalabra));
+    }
 
-	}
-
-	@Then("^el puede ver el texto (.*)$")
-	public void elPuedeVerElTexto(String validarDato) {
-		OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(ValidarLosResultadosDeLaBusqueda.conElDato(),
-				Matchers.containsString(validarDato)));
-
-	}
-
+    @Then("^el puede ver el texto (.*)$")
+    public void elPuedeVerElTexto(String validarDato) {
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(ValidarLosResultadosDeLaBusqueda.conElDato(),
+                Matchers.containsString(validarDato)));
+    }
 }

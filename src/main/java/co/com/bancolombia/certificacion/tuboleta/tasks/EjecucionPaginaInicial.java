@@ -9,19 +9,13 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class EjecucionPaginaInicial implements Task {
 
-	@Override
-	public <T extends Actor> void performAs(T actor) {
-		// TODO Auto-generated method stub
-		
-		actor.attemptsTo(
-				Click.on(MapeoPaginaInicial.CLICK_REGISTRO));
-		
-	}
-	
-	public static EjecucionPaginaInicial dandoClick() {
-		return instrumented(EjecucionPaginaInicial.class);
-	}
-	
-	
+    @Override
+    public <T extends Actor> void performAs(T actor) {
+        actor.attemptsTo(
+                Click.on(MapeoPaginaInicial.CLICK_REGISTRO));
+    }
 
+    public static EjecucionPaginaInicial dandoClick() {
+        return instrumented(EjecucionPaginaInicial.class);
+    }
 }

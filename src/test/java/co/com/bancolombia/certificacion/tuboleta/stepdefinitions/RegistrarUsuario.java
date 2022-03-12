@@ -15,38 +15,35 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
+import org.openqa.selenium.WebDriver;
 
 public class RegistrarUsuario {
 
-	@Before
-	public void manipularActor() {
-		OnStage.setTheStage(new OnlineCast());
+    WebDriver driver;
 
-	}
+    @Before
+    public void manipularActor() {
+        OnStage.setTheStage(new OnlineCast());
+    }
 
-	@Given("^que el (.*) esta en la pagina inicial de tuboleta$")
-	public void queElUsuarioEstaEnLaPaginaInicialDeTuboleta(String name) {
-		OnStage.theActorCalled(name).can(BrowseTheWeb.with(MyDriver.web().enLaPagina("https://vive.tuboleta.com/")));
-		OnStage.theActorInTheSpotlight().wasAbleTo((Performable) EjecucionPaginaInicial.dandoClick());
+    @Given("^que el (.*) esta en la pagina inicial de tuboleta$")
+    public void queElUsuarioEstaEnLaPaginaInicialDeTuboleta(String name) {
+        OnStage.theActorCalled(name).can(BrowseTheWeb.with(MyDriver.web().enLaPagina("https://vive.tuboleta.com/")));
+        OnStage.theActorInTheSpotlight().wasAbleTo(EjecucionPaginaInicial.dandoClick());
+    }
 
-	}
+    @When("^el diligencia todos los datos de la pagina para finalizar el registro$")
+    public void elDiligenciaTodosLosDatosDeLaPaginaParaFinalizarElRegistro() {
+        OnStage.theActorInTheSpotlight().attemptsTo(EjecucionDetallesPersonales.conLosDatos());
+    }
 
-	@When("^el diligencia todos los datos de la pagina para finalizar el registro$")
-	public void elDiligenciaTodosLosDatosDeLaPaginaParaFinalizarElRegistro() {
-		OnStage.theActorInTheSpotlight().attemptsTo((Performable) EjecucionDetallesPersonales.conLosDatos());
+    @When("^diligencia los datos de ubicacion geografica$")
+    public void diligenciaLosDatosDeUbicacionGeografica() {
+        OnStage.theActorInTheSpotlight()
+                .attemptsTo(EjecucionUbicacionGeografica.conLosDatosDeUbicacion());
+    }
 
-	}
-
-	@When("^diligencia los datos de ubicacion geografica$")
-	public void diligenciaLosDatosDeUbicacionGeografica() {
-		OnStage.theActorInTheSpotlight()
-				.attemptsTo(EjecucionUbicacionGeografica.conLosDatosDeUbicacion());
-
-	}
-
-	@Then("^el puede ver su nombre en la pagina de bienvenida$")
-	public void elPuedeVerSuNombreEnLaPaginaDeBienvenida() {
-
-	}
-
+    @Then("^el puede ver su nombre en la pagina de bienvenida$")
+    public void elPuedeVerSuNombreEnLaPaginaDeBienvenida() {
+    }
 }
